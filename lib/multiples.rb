@@ -7,9 +7,5 @@ def is_divisible_by_3(number)
 end
 
 def sum_multiples(n)
-  result = 0
-  (0...n).each do |num|
-    result += num if is_divisible_by_3(num) || is_divisible_by_5(num)
-  end
-  result
+  (0...1000).select {|num| is_divisible_by_5(num) || is_divisible_by_3(num)}.inject(:+)
 end
